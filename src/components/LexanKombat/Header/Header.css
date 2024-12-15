@@ -1,0 +1,16 @@
+header {
+    margin-left: 10px;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+.username {
+    font-size: 14px;
+    font-weight: bold;
+}
