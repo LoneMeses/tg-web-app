@@ -18,7 +18,7 @@ const Form = () => {
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
-        return {
+        return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [])
