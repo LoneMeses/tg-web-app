@@ -1,7 +1,7 @@
 import React from 'react';
 import {useTelegram} from "../../hooks/useTelegram";
-import './Header.css'
-const Header = () => {
+import './HeaderKombat.css'
+const HeaderKombat = () => {
     const {user} = useTelegram()
     return (
         <header>
@@ -15,4 +15,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default HeaderKombat;

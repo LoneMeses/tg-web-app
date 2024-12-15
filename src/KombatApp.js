@@ -1,6 +1,6 @@
 import {useTelegram} from "./components/hooks/useTelegram";
 import {useEffect} from "react";
-import Header from "./components/LexanKombat/Header/Header";
+import HeaderKombat from "./components/LexanKombat/Header/HeaderKombat";
 
 
 function KombatApp() {
@@ -12,7 +12,7 @@ function KombatApp() {
 
     return (
         <div className="App">
-           <Header/>
+           <HeaderKombat/>
         </div>
     );
 }
