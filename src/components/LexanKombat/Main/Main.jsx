@@ -10,7 +10,7 @@ const Main = () => {
     return (
         <div className={'main'}>
             <div className={'counter'}>
-                <img src="https://i.imgur.com/974Idgl.png" alt="l-coin"/>
+                <img src="/src/components/assets/lCoin.svg" alt="l-coin"/>
                 <span>{value}</span>
             </div>
             <button value={value} onClick={increment}>Добавить</button>
