@@ -5,14 +5,21 @@ header {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 60px;
+    background: var(--tg-theme-bg-color);
 }
+
 img {
     width: 60px;
-    height: 60px;
     border-radius: 50%;
 }
+
+.img {
+    background: var(--tg-theme-bg-color);
+}
+
 .username {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
+    background: var(--tg-theme-bg-color);
+    margin-left: 10px;
 }
