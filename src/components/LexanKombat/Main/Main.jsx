@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Main.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/Lexan.png'
@@ -6,6 +6,9 @@ import Lexan from '../assets/Lexan.png'
 const Main = () => {
     const [value, setValue] = useState(0)
 
+    useEffect(() => {
+
+    }, [])
     const increment = () => {
         setValue(value + 1)
     }
@@ -17,7 +20,7 @@ const Main = () => {
                 <span>{value}</span>
             </div>
             <div className="circle">
-                <img src={Lexan} alt="lexan"/>
+                <img src={Lexan} alt="lexan" onClick={increment}/>
             </div>
         </div>
     );
