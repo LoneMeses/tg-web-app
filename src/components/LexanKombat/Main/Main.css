@@ -1,18 +1,24 @@
 .main {
     margin-top: 100px;
-    display: block;
+    display: flex;
     background: #3d3535;
     border-radius: 20px 20px 0 0;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-shadow: 0 -5px 50px blueviolet;
 }
 img {
     background: var(--tg-theme-bg-color);
 }
 .counter {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     margin-top: 60px;
+    display: flex;
+    align-items: center;
 }
 span {
     font-size: 20px;
+    margin-left: 10px;
 }

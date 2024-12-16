@@ -3,6 +3,8 @@
     background: #532267;
     border: 5px solid #361f54;
     border-radius: 50%;
+    width: 100%;
+    height: 100%;
 }
 .btn-img {
     width: 30px;
