@@ -1,0 +1,9 @@
+.main {
+    margin-top: 100px;
+    display: block;
+    background: #3d3535;
+    border-radius: 20px 20px 0 0;
+}
+img {
+    background: var(--tg-theme-bg-color);
+}
