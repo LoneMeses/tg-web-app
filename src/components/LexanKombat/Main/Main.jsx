@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Main.css'
+import ButtonKombat from "../Button/ButtonKombat";
 const Main = () => {
     const [value, setValue] = useState(0)
 
@@ -13,7 +14,7 @@ const Main = () => {
                 <img src="https://i.imgur.com/1SDruuW.png" alt="l-coin"/>
                 <span>{value}</span>
             </div>
-            <button value={value} onClick={increment}>Добавить</button>
+            <ButtonKombat value={value} onClick={increment}/>
         </div>
     );
 };

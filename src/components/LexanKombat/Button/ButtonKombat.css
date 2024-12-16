@@ -1,0 +1,11 @@
+.Kombat-btn {
+    padding: 60px 30px;
+    background: #532267;
+    border: 5px solid #361f54;
+    border-radius: 50%;
+}
+.btn-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

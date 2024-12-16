@@ -3,7 +3,16 @@
     display: block;
     background: #3d3535;
     border-radius: 20px 20px 0 0;
+    justify-content: center;
+    align-items: center;
 }
 img {
     background: var(--tg-theme-bg-color);
+}
+.counter {
+    margin-bottom: 100px;
+    margin-top: 60px;
+}
+span {
+    font-size: 20px;
 }
