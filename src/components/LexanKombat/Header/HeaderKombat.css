@@ -5,21 +5,21 @@ header {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    background: var(--tg-theme-bg-color);
+    background: #1c1f24;
 }
 
 img {
-    width: 60px;
+    width: 40px;
     border-radius: 50%;
 }
 
 .img {
-    background: var(--tg-theme-bg-color);
+    background: #1c1f24;
 }
 
 .username {
     font-size: 20px;
-    font-weight: bold;
-    background: var(--tg-theme-bg-color);
+    font-weight: 800;
+    background: #1c1f24;
     margin-left: 10px;
 }
