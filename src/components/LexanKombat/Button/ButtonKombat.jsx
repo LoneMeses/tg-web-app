@@ -3,7 +3,7 @@ import './ButtonKombat.css'
 const ButtonKombat = (props) => {
     return (
         <button {...props} className={'Kombat-btn'}>
-            <img src="/src/components/assets/OpRw4K-MlZU.jpg" alt="lexan" className={'btn-img'}/>
+            <img src="/src/components/LexanKombat/assets/OpRw4K-MlZU.jpg" alt="lexan" className={'btn-img'}/>
         </button>
     );
 };

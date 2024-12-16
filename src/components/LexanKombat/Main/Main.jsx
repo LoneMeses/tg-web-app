@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './Main.css'
-import ButtonKombat from "../Button/ButtonKombat";
+import Coin from '../assets/lCoin.png'
+import Lexan from '../assets/Lexan.png'
+
 const Main = () => {
     const [value, setValue] = useState(0)
 
@@ -11,10 +13,12 @@ const Main = () => {
     return (
         <div className={'main'}>
             <div className={'counter'}>
-                <img src="https://i.imgur.com/1SDruuW.png" alt="l-coin"/>
+                <img src={Coin} alt="l-coin"/>
                 <span>{value}</span>
             </div>
-            <ButtonKombat value={value} onClick={increment}/>
+            <div className="circle">
+                <img src={Lexan} alt="lexan"/>
+            </div>
         </div>
     );
 };
