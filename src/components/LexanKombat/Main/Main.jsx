@@ -7,8 +7,8 @@ const Main = () => {
     const [value, setValue] = useState(0)
 
     const onClickHandler = (event) => {
-        console.log(event)
-        const rect = event.getBoundingClientRect()
+        console.log(event.target)
+        const rect = event.target.getBoundingClientRect()
 
         const offsetX = event.clientX - rect.left - rect.width / 2;
         const offsetY = event.clientY - rect.top - rect.height / 2;
@@ -18,12 +18,12 @@ const Main = () => {
         const tiltX = (offsetY / rect.height) * DEG
         const tiltY = (offsetX / rect.width) * -DEG
 
-        event.style.setProperty('--tiltX', `${tiltX}deg`)
-        event.style.setProperty('--tiltY', `${tiltY}deg`)
+        event.target.style.setProperty('--tiltX', `${tiltX}deg`)
+        event.target.style.setProperty('--tiltY', `${tiltY}deg`)
 
         setTimeout(() => {
-            event.style.setProperty('--tiltX', `0deg`)
-            event.style.setProperty('--tiltX', `0deg`)
+            event.target.style.setProperty('--tiltX', `0deg`)
+            event.target.style.setProperty('--tiltX', `0deg`)
         }, 300)
 
         setValue(value + 1)
