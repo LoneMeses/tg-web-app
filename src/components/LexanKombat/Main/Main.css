@@ -1,13 +1,14 @@
 .main {
     margin-top: 100px;
     display: flex;
-    background: #3d3535;
+    background: #181a1c;
     border-radius: 20px 20px 0 0;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    box-shadow: 0 -5px 50px blueviolet;
+    box-shadow: 0 -5px 50px #af94c7;
+    height: 100vh;
+    border-top: 2px solid #af94c7;
 }
 
 .counter {
@@ -18,12 +19,13 @@
 }
 
 .counter img {
-    width: 50px;
+    width: 80px;
     height: 50px;
+    user-select: none;
 }
 span {
     font-size: 20px;
-    margin-left: 10px;
+    user-select: none;
 }
 
 .circle {
@@ -38,4 +40,5 @@ span {
     --tiltX: 0deg;
     --tiltY: 0deg;
     transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
+    user-select: none;
 }
