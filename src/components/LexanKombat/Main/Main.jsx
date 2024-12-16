@@ -5,7 +5,9 @@ import Lexan from '../assets/Lexan.png'
 
 const Main = () => {
     const [value, setValue] = useState(0)
+
     const onClickHandler = (event) => {
+        console.log(event)
         const rect = event.getBoundingClientRect()
 
         const offsetX = event.clientX - rect.left - rect.width / 2;
