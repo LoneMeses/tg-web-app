@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import './Main.css'
 const Main = () => {
     const [value, setValue] = useState(0)
 
