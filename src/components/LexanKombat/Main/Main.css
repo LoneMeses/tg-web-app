@@ -9,9 +9,7 @@
     flex-direction: column;
     box-shadow: 0 -5px 50px blueviolet;
 }
-img {
-    background: var(--tg-theme-bg-color);
-}
+
 .counter {
     margin-bottom: 50px;
     margin-top: 60px;
