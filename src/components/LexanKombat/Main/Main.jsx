@@ -20,12 +20,13 @@ const Main = () => {
             floatingScore.remove();
         }, 1000);
     }
-    const energyInterval = () => {
-        if (currentEnergy < totalEnergy) {
-            setCurrentEnergy(currentEnergy + 1)
-            localStorage.setItem('energy', currentEnergy.toString())
-        }
-    }
+
+    useEffect(() => {
+        const energyInterval = setInterval(() => {
+            setCurrentEnergy(prevState => prevState + 1)
+        }, 5000)
+        return () => clearInterval(energyInterval)
+    }, [])
 
     const onClickHandler = (event) => {
         if (currentEnergy <= totalEnergy) {
@@ -43,8 +44,8 @@ const Main = () => {
             event.target.style.setProperty('--tiltY', `${tiltY}deg`)
             createFloatingScore(event.clientX, event.clientY)
 
-            setValue(value + 1)
-            setCurrentEnergy(currentEnergy - 1)
+            setValue(prevState => prevState - 1)
+            setCurrentEnergy(prevState => prevState - 1)
             localStorage.setItem('value', value.toString())
             localStorage.setItem('energy', currentEnergy.toString())
 
@@ -56,7 +57,7 @@ const Main = () => {
 
         }
     }
-    setInterval(energyInterval, 5000)
+
 
 
     return (
