@@ -24,6 +24,7 @@
     user-select: none;
 }
 span {
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
     user-select: none;
 }
@@ -47,6 +48,7 @@ span {
     pointer-events: none;
     color: red;
     font-size: 20px;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
     animation: floatUp 1s ease-out forwards;
 }
