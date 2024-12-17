@@ -21,8 +21,10 @@ const Main = () => {
         }, 1000);
     }
     const energyInterval = () => {
-        setCurrentEnergy(currentEnergy + 1)
-        localStorage.setItem('energy', currentEnergy.toString())
+        if (currentEnergy < totalEnergy) {
+            setCurrentEnergy(currentEnergy + 1)
+            localStorage.setItem('energy', currentEnergy.toString())
+        }
     }
 
     const onClickHandler = (event) => {
@@ -54,15 +56,7 @@ const Main = () => {
 
         }
     }
-    useEffect(() => {
-        if (currentEnergy < totalEnergy) {
-            setInterval(energyInterval, 5000)
-        }
-        if (currentEnergy === totalEnergy) {
-            clearInterval(energyInterval)
-        }
-        console.log('useEffect отрабатывает')
-    }, [currentEnergy])
+    setInterval(energyInterval, 5000)
 
 
     return (
