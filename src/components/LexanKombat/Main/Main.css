@@ -65,10 +65,11 @@ span {
 }
 .energy-bar {
     width: 100%;
-    border: 1px solid whitesmoke;
+    border: 1px solid #ce991d;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     border-radius: 10px;
     margin-top: 20px;
     padding: 10px 20px;
-    box-shadow: 0 0 3px #ce991d inset;
+    box-shadow: 0 0 5px #ce991d inset;
 }
