@@ -3,29 +3,41 @@
     justify-items: center;
     align-items: center;
 }
-.loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  background: linear-gradient(0deg, rgba(255, 213, 0, 0.2) 33%, #ffd500 100%);
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+
+.spinner {
+    width: 64px;
+    height: 64px;
+    opacity: 0;
+    animation: appear 0.2s linear forwards;
+    animation-delay: 1s;
 }
-.loader::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #263238;
+
+.spinner .track {
+    fill: #1c1c1e;
 }
+
+.spinner .rotate {
+    transform-origin: 50% 50%;
+    animation: rotation 3s linear infinite;
+    fill: #dddddd;
+}
+
 @keyframes rotation {
-  0% { transform: rotate(0deg) }
-  100% { transform: rotate(360deg)}
+    0% {
+        transform: rotate(0turn);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
