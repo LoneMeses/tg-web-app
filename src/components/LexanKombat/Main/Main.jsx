@@ -6,6 +6,7 @@ import {LoadingContext} from "../../context/LoadingContext";
 
 
 const Main = () => {
+
     const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
     const createFloatingScore = (x, y) => {
@@ -19,7 +20,10 @@ const Main = () => {
             floatingScore.remove();
         }, 1000);
     }
-
+    const energyInterval = () => {
+        setCurrentEnergy(currentEnergy + 1)
+        localStorage.setItem('energy', currentEnergy.toString())
+    }
 
     const onClickHandler = (event) => {
         if (currentEnergy <= totalEnergy) {
@@ -52,17 +56,10 @@ const Main = () => {
     }
     useEffect(() => {
         if (currentEnergy < totalEnergy) {
-            setInterval(() => {
-                setCurrentEnergy(currentEnergy + 1)
-                localStorage.setItem('energy', currentEnergy.toString())
-            }, 5000)
+            setInterval(energyInterval, 5000)
         }
         if (currentEnergy === totalEnergy) {
-            clearInterval(setInterval(() => {
-                setCurrentEnergy(currentEnergy + 1)
-                localStorage.setItem('energy', currentEnergy.toString())
-            }, 5000))
-            localStorage.setItem('energy', currentEnergy.toString())
+            clearInterval(energyInterval)
         }
         console.log('useEffect отрабатывает')
     }, [currentEnergy])
