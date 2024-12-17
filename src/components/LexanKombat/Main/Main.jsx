@@ -46,7 +46,7 @@ const Main = () => {
                 event.target.style.setProperty('--tiltX', `0deg`)
                 event.target.style.setProperty('--tiltX', `0deg`)
             }, 300)
-
+            console.log('Отрабатывает клик')
 
         }
     }
@@ -64,6 +64,7 @@ const Main = () => {
             }, 5000))
             localStorage.setItem('energy', currentEnergy.toString())
         }
+        console.log('useEffect отрабатывает')
     }, [currentEnergy])
 
 
