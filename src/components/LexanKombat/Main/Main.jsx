@@ -4,6 +4,7 @@ import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
 import {LoadingContext} from "../../context/LoadingContext";
 import LoadingPage from "../Pages/LoadingPage";
+import {Spinner} from "react-bootstrap";
 
 const Main = () => {
     const [value, setValue] = useState(0)
@@ -35,7 +36,7 @@ const Main = () => {
     }, 5000)
 
     if(isLoading) {
-        return <LoadingPage/>
+        return <Spinner variant={'info'} animation={'border'}/>
     }
 
 
