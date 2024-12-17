@@ -8,7 +8,6 @@ import {LoadingContext} from "../../context/LoadingContext";
 const Main = () => {
     const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
-    const [energyInterval, setEnergyInterval] = useState(false)
     const createFloatingScore = (x, y) => {
         const floatingScore = document.createElement('div');
         floatingScore.id = 'floating-score';
@@ -38,29 +37,32 @@ const Main = () => {
             event.target.style.setProperty('--tiltY', `${tiltY}deg`)
             createFloatingScore(event.clientX, event.clientY)
 
+            setValue(value + 1)
+            setCurrentEnergy(currentEnergy - 1)
+            localStorage.setItem('value', value.toString())
+            localStorage.setItem('energy', currentEnergy.toString())
+
             setTimeout(() => {
                 event.target.style.setProperty('--tiltX', `0deg`)
                 event.target.style.setProperty('--tiltX', `0deg`)
             }, 300)
 
-            setValue(value + 1)
-            setCurrentEnergy(currentEnergy - 1)
-            localStorage.setItem('value', value.toString())
-            localStorage.setItem('energy', currentEnergy.toString())
+
         }
     }
     useEffect(() => {
         if (currentEnergy < totalEnergy) {
             setInterval(() => {
                 setCurrentEnergy(currentEnergy + 1)
+                localStorage.setItem('energy', currentEnergy.toString())
             }, 5000)
-            setEnergyInterval(true)
         }
         if (currentEnergy === totalEnergy) {
             clearInterval(setInterval(() => {
                 setCurrentEnergy(currentEnergy + 1)
+                localStorage.setItem('energy', currentEnergy.toString())
             }, 5000))
-            setEnergyInterval(false)
+            localStorage.setItem('energy', currentEnergy.toString())
         }
     }, [currentEnergy])
 
