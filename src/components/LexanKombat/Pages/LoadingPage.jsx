@@ -5,7 +5,7 @@ const LoadingPage = () => {
     return (
         <div className={'loading_page'}>
             <h3>Пожалуйста, подождите, игра загружается</h3>
-            <Spinner animation={'border'} variant={'info'}/>
+            <span className={'loader'}></span>
         </div>
     );
 };

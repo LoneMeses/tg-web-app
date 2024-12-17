@@ -36,7 +36,7 @@ const Main = () => {
     }, 5000)
 
     if(isLoading) {
-        return <Spinner variant={'info'} animation={'border'}/>
+        return <LoadingPage/>
     }
 
 
