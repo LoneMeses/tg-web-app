@@ -22,12 +22,17 @@ const Main = () => {
     }
 
     useEffect(() => {
-        const energyInterval = setInterval(() => {
-            if (currentEnergy < totalEnergy) {
-                setCurrentEnergy(prevState => prevState + 1)
-            }
+        const interval = setInterval(() => {
+            setCurrentEnergy((prevEnergy) => {
+                if (prevEnergy < totalEnergy) {
+                    return prevEnergy + 1
+                } else {
+                    clearInterval(interval)
+                    return prevEnergy
+                }
+            })
         }, 5000)
-        return () => clearInterval(energyInterval)
+        return () => clearInterval(interval)
     }, [])
 
     const onClickHandler = (event) => {
