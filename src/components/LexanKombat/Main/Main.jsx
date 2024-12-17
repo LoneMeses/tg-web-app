@@ -23,7 +23,9 @@ const Main = () => {
 
     useEffect(() => {
         const energyInterval = setInterval(() => {
-            setCurrentEnergy(prevState => prevState + 1)
+            if (currentEnergy < totalEnergy) {
+                setCurrentEnergy(prevState => prevState + 1)
+            }
         }, 5000)
         return () => clearInterval(energyInterval)
     }, [])
@@ -57,7 +59,6 @@ const Main = () => {
 
         }
     }
-
 
 
     return (
