@@ -22,7 +22,7 @@ const Main = () => {
 
 
     const onClickHandler = (event) => {
-        if (currentEnergy < totalEnergy) {
+        if (currentEnergy <= totalEnergy) {
             const rect = event.target.getBoundingClientRect()
 
             const offsetX = event.clientX - rect.left - rect.width / 2;
