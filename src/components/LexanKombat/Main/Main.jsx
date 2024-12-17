@@ -9,6 +9,18 @@ import {Spinner} from "react-bootstrap";
 const Main = () => {
     const [value, setValue] = useState(0)
     const {isLoading, setIsLoading} = useContext(LoadingContext)
+
+    const createFloatingScore = (x, y) => {
+        const floatingScore = document.createElement('div');
+        floatingScore.id = 'floating-score';
+        floatingScore.style.left = `${x}px`;
+        floatingScore.style.top = `${y}px`;
+        floatingScore.textContent = '+1';
+        document.body.appendChild(floatingScore);
+        setTimeout(() => {
+            floatingScore.remove();
+        }, 1000);
+    }
     const onClickHandler = (event) => {
         const rect = event.target.getBoundingClientRect()
 
@@ -22,6 +34,7 @@ const Main = () => {
 
         event.target.style.setProperty('--tiltX', `${tiltX}deg`)
         event.target.style.setProperty('--tiltY', `${tiltY}deg`)
+        createFloatingScore(event.clientX, event.clientY)
 
         setTimeout(() => {
             event.target.style.setProperty('--tiltX', `0deg`)
@@ -30,6 +43,8 @@ const Main = () => {
 
         setValue(value + 1)
     }
+
+
 
     setTimeout(() => {
         setIsLoading(false)
