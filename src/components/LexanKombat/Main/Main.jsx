@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import './Main.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'

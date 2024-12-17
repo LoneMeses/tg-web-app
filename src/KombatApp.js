@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import HeaderKombat from "./components/LexanKombat/Header/HeaderKombat";
 import Main from "./components/LexanKombat/Main/Main";
 import {LoadingContext} from "./components/context/LoadingContext";
-import LoadingPage from "./components/LexanKombat/Pages/LoadingPage";
 
 
 function KombatApp() {
