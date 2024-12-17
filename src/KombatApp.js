@@ -13,6 +13,7 @@ function KombatApp() {
         tg.ready()
         setValue(parseInt(localStorage.getItem('value')) || 0)
         setCurrentEnergy(parseInt(localStorage.getItem('energy')) || 3000)
+        console.log('Главный useEffect отрабатывает')
     }, [])
 
 
