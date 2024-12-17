@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './Main.css'
 import Coin from '../assets/lCoin.png'
-import Lexan from '../assets/Lexan.png'
+import Lexan from '../assets/LexanButton.png'
+import {LoadingContext} from "../../context/LoadingContext";
+import LoadingPage from "../Pages/LoadingPage";
 
 const Main = () => {
     const [value, setValue] = useState(0)
-
+    const {isLoading, setIsLoading} = useContext(LoadingContext)
     const onClickHandler = (event) => {
-        console.log(event.target)
         const rect = event.target.getBoundingClientRect()
 
         const offsetX = event.clientX - rect.left - rect.width / 2;
@@ -27,6 +28,14 @@ const Main = () => {
         }, 300)
 
         setValue(value + 1)
+    }
+
+    setTimeout(() => {
+        setIsLoading(false)
+    })
+
+    if(isLoading) {
+        return <LoadingPage/>
     }
 
 
