@@ -12,7 +12,7 @@ function KombatApp() {
     useEffect(() => {
         tg.ready()
         setValue(parseInt(localStorage.getItem('value')) || 0)
-        setCurrentEnergy(parseInt(localStorage.getItem('energy')))
+        setCurrentEnergy(parseInt(localStorage.getItem('energy')) || currentEnergy)
     }, [])
 
 
