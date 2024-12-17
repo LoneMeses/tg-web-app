@@ -8,21 +8,25 @@ import LoadingPage from "./components/LexanKombat/Pages/LoadingPage";
 
 function KombatApp() {
     const {tg} = useTelegram()
+    const [value, setValue] = useState(0)
+    const [currentEnergy, setCurrentEnergy] = useState(3000)
     useEffect(() => {
         tg.ready()
+        setValue(parseInt(localStorage.getItem('value')) || 0)
+        setCurrentEnergy(parseInt(localStorage.getItem('energy')) || 3000)
     }, [])
 
 
-    const [isLoading, setIsLoading] = useState(true);
     return (
         <LoadingContext.Provider value={{
-            isLoading,
-            setIsLoading
+            value,
+            setValue,
+            currentEnergy,
+            setCurrentEnergy
         }}>
             <div className="App">
                 <HeaderKombat/>
                 <Main/>
-                <LoadingPage/>
             </div>
         </LoadingContext.Provider>
 

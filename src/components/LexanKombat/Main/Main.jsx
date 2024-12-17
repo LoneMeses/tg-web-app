@@ -3,13 +3,11 @@ import './Main.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
 import {LoadingContext} from "../../context/LoadingContext";
-import LoadingPage from "../Pages/LoadingPage";
-import {Spinner} from "react-bootstrap";
+
 
 const Main = () => {
-    const [value, setValue] = useState(0)
-    const {isLoading, setIsLoading} = useContext(LoadingContext)
-
+    const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
+    const totalEnergy = 3000
     const createFloatingScore = (x, y) => {
         const floatingScore = document.createElement('div');
         floatingScore.id = 'floating-score';
@@ -21,39 +19,40 @@ const Main = () => {
             floatingScore.remove();
         }, 1000);
     }
+
+
     const onClickHandler = (event) => {
-        const rect = event.target.getBoundingClientRect()
+        if (currentEnergy < totalEnergy) {
+            const rect = event.target.getBoundingClientRect()
 
-        const offsetX = event.clientX - rect.left - rect.width / 2;
-        const offsetY = event.clientY - rect.top - rect.height / 2;
+            const offsetX = event.clientX - rect.left - rect.width / 2;
+            const offsetY = event.clientY - rect.top - rect.height / 2;
 
-        const DEG = 40
+            const DEG = 40
 
-        const tiltX = (offsetY / rect.height) * DEG
-        const tiltY = (offsetX / rect.width) * -DEG
+            const tiltX = (offsetY / rect.height) * DEG
+            const tiltY = (offsetX / rect.width) * -DEG
 
-        event.target.style.setProperty('--tiltX', `${tiltX}deg`)
-        event.target.style.setProperty('--tiltY', `${tiltY}deg`)
-        createFloatingScore(event.clientX, event.clientY)
+            event.target.style.setProperty('--tiltX', `${tiltX}deg`)
+            event.target.style.setProperty('--tiltY', `${tiltY}deg`)
+            createFloatingScore(event.clientX, event.clientY)
 
-        setTimeout(() => {
-            event.target.style.setProperty('--tiltX', `0deg`)
-            event.target.style.setProperty('--tiltX', `0deg`)
-        }, 300)
+            setTimeout(() => {
+                event.target.style.setProperty('--tiltX', `0deg`)
+                event.target.style.setProperty('--tiltX', `0deg`)
+            }, 300)
 
-        setValue(value + 1)
+            setValue(value + 1)
+            setCurrentEnergy(currentEnergy - 1)
+            localStorage.setItem('value', value.toString())
+            localStorage.setItem('energy', currentEnergy.toString())
+        }
     }
-
-
-
-    setTimeout(() => {
-        setIsLoading(false)
-    }, 5000)
-
-    if(isLoading) {
-        return <LoadingPage/>
-    }
-
+    setInterval(() => {
+        if (currentEnergy < totalEnergy) {
+            setCurrentEnergy(currentEnergy + 1)
+        }
+    }, 5000);
 
     return (
         <div className={'main'}>
@@ -63,6 +62,9 @@ const Main = () => {
             </div>
             <div className="circle">
                 <img src={Lexan} alt="lexan" onClick={event => onClickHandler(event)}/>
+            </div>
+            <div className={'energy-bar'}>
+                Энергия: {currentEnergy} / {totalEnergy}
             </div>
         </div>
     );

@@ -46,7 +46,7 @@ span {
 #floating-score {
     position: absolute;
     pointer-events: none;
-    color: red;
+    color: white;
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
@@ -62,4 +62,9 @@ span {
         opacity: 0;
         transform: translateY(-50px);
     }
+}
+.energy-bar {
+    width: 100%;
+    border: 1px solid whitesmoke;
+    text-align: center;
 }
