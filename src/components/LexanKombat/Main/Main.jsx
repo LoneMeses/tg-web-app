@@ -32,7 +32,7 @@ const Main = () => {
 
     setTimeout(() => {
         setIsLoading(false)
-    })
+    }, 5000)
 
     if(isLoading) {
         return <LoadingPage/>
