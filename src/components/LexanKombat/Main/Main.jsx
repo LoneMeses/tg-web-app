@@ -51,8 +51,8 @@ const Main = () => {
             event.target.style.setProperty('--tiltY', `${tiltY}deg`)
             createFloatingScore(event.clientX, event.clientY)
 
-            setValue(prevState => prevState - 1)
-            setCurrentEnergy(prevState => prevState - 1)
+            setValue(value - 1)
+            setCurrentEnergy(currentEnergy - 1)
             localStorage.setItem('value', value.toString())
             localStorage.setItem('energy', currentEnergy.toString())
 
