@@ -4,7 +4,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: 50%;
     background: #1c1f24;
     margin-top: 10px;
 }
