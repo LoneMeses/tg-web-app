@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './Main.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
@@ -8,6 +8,7 @@ import {LoadingContext} from "../../context/LoadingContext";
 const Main = () => {
     const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
+    const [energyInterval, setEnergyInterval] = useState(false)
     const createFloatingScore = (x, y) => {
         const floatingScore = document.createElement('div');
         floatingScore.id = 'floating-score';
@@ -48,11 +49,21 @@ const Main = () => {
             localStorage.setItem('energy', currentEnergy.toString())
         }
     }
-    setInterval(() => {
+    useEffect(() => {
         if (currentEnergy < totalEnergy) {
-            setCurrentEnergy(currentEnergy + 1)
+            setInterval(() => {
+                setCurrentEnergy(currentEnergy + 1)
+            }, 5000)
+            setEnergyInterval(true)
         }
-    }, 5000);
+        if (currentEnergy === totalEnergy) {
+            clearInterval(setInterval(() => {
+                setCurrentEnergy(currentEnergy + 1)
+            }, 5000))
+            setEnergyInterval(false)
+        }
+    }, [currentEnergy])
+
 
     return (
         <div className={'main'}>
