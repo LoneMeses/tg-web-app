@@ -31,6 +31,7 @@ const Main = () => {
                     return prevEnergy
                 }
             })
+            localStorage.setItem('energy', currentEnergy.toString())
         }, 3000)
         return () => clearInterval(interval)
     }, [])
