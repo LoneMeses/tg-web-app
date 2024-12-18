@@ -31,7 +31,7 @@ const Main = () => {
                     return prevEnergy
                 }
             })
-        }, 5000)
+        }, 3000)
         return () => clearInterval(interval)
     }, [])
 
