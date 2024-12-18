@@ -17,6 +17,8 @@ function KombatApp() {
             const closeTime = parseInt(localStorage.getItem('closeTime')) || 0;
             const openTime = Date.now()
             const energyForAdd = ((openTime - closeTime) / 3000)
+            console.log(closeTime)
+            console.log(openTime)
             if (energyForAdd + currentEnergy >= 3000) {
                 localStorage.setItem('energy', '3000')
             } else {
