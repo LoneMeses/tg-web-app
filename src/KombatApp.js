@@ -9,23 +9,28 @@ function KombatApp() {
     const {tg} = useTelegram()
     const [value, setValue] = useState(0)
     const [currentEnergy, setCurrentEnergy] = useState(3000)
-    tg.onEvent('activated', () => {
-        const closeTime = Number(localStorage.getItem('closeTime')) || 0;
-        const openTime = Date.now()
-        const energyForAdd = ((openTime - closeTime) / 3000)
-        if(energyForAdd + currentEnergy >= 3000) {
-            localStorage.setItem('energy', '3000')
-        } else{
-            localStorage.setItem('energy', (energyForAdd + currentEnergy).toString())
-        }
-    })
-    tg.onEvent('deactivated', () => {
-        localStorage.setItem('closeTime', Date.now().toString())
-    })
+
+
     useEffect(() => {
         tg.ready()
+        tg.onEvent('activated', () => {
+            const closeTime = Number(localStorage.getItem('closeTime')) || 0;
+            const openTime = Date.now()
+            const energyForAdd = ((openTime - closeTime) / 3000)
+            if (energyForAdd + currentEnergy >= 3000) {
+                localStorage.setItem('energy', '3000')
+            } else {
+                localStorage.setItem('energy', (energyForAdd + currentEnergy).toString())
+            }
+        })
         setValue(parseInt(localStorage.getItem('value')) || 0)
         setCurrentEnergy(parseInt(localStorage.getItem('energy')) || currentEnergy)
+
+        return () => {
+            tg.onEvent('deactivated', () => {
+                localStorage.setItem('closeTime', Date.now().toString())
+            })
+        }
     }, [])
 
 
