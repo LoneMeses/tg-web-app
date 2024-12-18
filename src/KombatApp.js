@@ -14,7 +14,7 @@ function KombatApp() {
     useEffect(() => {
         tg.ready()
         tg.onEvent('activated', () => {
-            const closeTime = Number(localStorage.getItem('closeTime')) || 0;
+            const closeTime = parseInt(localStorage.getItem('closeTime')) || 0;
             const openTime = Date.now()
             const energyForAdd = ((openTime - closeTime) / 3000)
             if (energyForAdd + currentEnergy >= 3000) {
