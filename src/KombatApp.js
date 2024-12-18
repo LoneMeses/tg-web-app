@@ -26,10 +26,9 @@ function KombatApp() {
 
         setValue(parseInt(localStorage.getItem('value')) || 0)
         setCurrentEnergy(parseInt(localStorage.getItem('energy')) || currentEnergy)
-
-        return () => {
+        tg.onEvent('deactivated', () => {
             localStorage.setItem('closeTime', Date.now().toString())
-        }
+        })
     }, [])
 
 
