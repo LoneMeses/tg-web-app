@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-
+import './FormKombat.css'
 const FormKombat = () => {
     return (
         <div className={'kombat-form'}>
