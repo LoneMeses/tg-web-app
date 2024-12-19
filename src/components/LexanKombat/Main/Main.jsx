@@ -32,7 +32,6 @@ const Main = () => {
                 }
             })
             localStorage.setItem('energy', currentEnergy.toString())
-            localStorage.setItem('closeTime', Date.now().toString())
         }, 3000)
         return () => clearInterval(interval)
     }, [currentEnergy])
@@ -57,6 +56,7 @@ const Main = () => {
             setCurrentEnergy(currentEnergy - 1)
             localStorage.setItem('value', value.toString())
             localStorage.setItem('energy', currentEnergy.toString())
+            localStorage.setItem('closeTime', Date.now().toString())
 
             setTimeout(() => {
                 event.target.style.setProperty('--tiltX', `0deg`)
