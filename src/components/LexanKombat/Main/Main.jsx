@@ -7,7 +7,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 
 const Main = () => {
-    const {cloudStorage} = useTelegram()
+    const {tg} = useTelegram()
 
     const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
@@ -33,7 +33,7 @@ const Main = () => {
                     return prevEnergy
                 }
             })
-            cloudStorage.setItem('energy', currentEnergy.toString())
+            tg.CloudStorage.setItem('energy', currentEnergy.toString())
         }, 3000)
         return () => clearInterval(interval)
     }, [currentEnergy])
@@ -56,9 +56,9 @@ const Main = () => {
 
             setValue(value + 1)
             setCurrentEnergy(currentEnergy - 1)
-            cloudStorage.setItem('value', value.toString())
-            cloudStorage.setItem('energy', currentEnergy.toString())
-            cloudStorage.setItem('closeTime', Date.now().toString())
+            tg.CloudStorage.setItem('value', value.toString())
+            tg.CloudStorage.setItem('energy', currentEnergy.toString())
+            tg.CloudStorage.setItem('closeTime', Date.now().toString())
 
             setTimeout(() => {
                 event.target.style.setProperty('--tiltX', `0deg`)
