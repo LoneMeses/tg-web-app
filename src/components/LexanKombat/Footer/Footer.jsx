@@ -6,7 +6,7 @@ const Footer = () => {
         <div className={'footer'}>
             <Link to={'/'}><AiOutlineHome/>Главная</Link>
             <hr/>
-            <Link to={'/form'}><AiOutlineDollari/>Вывод</Link>
+            <Link to={'/form'}><AiOutlineDollar/>Вывод</Link>
         </div>
     );
 };
