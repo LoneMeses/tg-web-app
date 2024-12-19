@@ -16,14 +16,15 @@ function KombatApp() {
         tg.ready()
         const closeTime = parseInt(localStorage.getItem('closeTime')) || Date.now();
         const openTime = Date.now()
+        const lastCurrentEnergy = parseInt(localStorage.getItem('energy'))
         const energyForAdd = ((openTime - closeTime) / 3000)
         console.log(closeTime)
         console.log(openTime)
         console.log(energyForAdd)
-        if (energyForAdd + currentEnergy >= 3000) {
+        if (energyForAdd + lastCurrentEnergy >= 3000) {
             localStorage.setItem('energy', '3000')
         } else {
-            localStorage.setItem('energy', (energyForAdd + currentEnergy).toString())
+            localStorage.setItem('energy', (energyForAdd + lastCurrentEnergy).toString())
         }
 
         setValue(parseInt(localStorage.getItem('value')) || 0)
