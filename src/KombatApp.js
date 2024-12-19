@@ -4,7 +4,7 @@ import HeaderKombat from "./components/LexanKombat/Header/HeaderKombat";
 import Game from "./components/LexanKombat/Game/Game";
 import {LoadingContext} from "./components/context/LoadingContext";
 import Footer from "./components/LexanKombat/Footer/Footer";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import FormKombat from "./components/LexanKombat/Form/FormKombat";
 
 
@@ -44,12 +44,10 @@ function KombatApp() {
         }}>
             <div className="App">
                 <HeaderKombat/>
-                <BrowserRouter>
-                    <Routes>
-                        <Route index element={<Game/>}/>
-                        <Route path={'form'} element={<FormKombat/>}/>
-                    </Routes>
-                </BrowserRouter>
+                <Routes>
+                    <Route index element={<Game/>}/>
+                    <Route path={'/form'} element={<FormKombat/>}/>
+                </Routes>
                 <Footer/>
             </div>
         </LoadingContext.Provider>
