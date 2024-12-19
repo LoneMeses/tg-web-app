@@ -4,6 +4,9 @@ export function useTelegram() {
     const onClose = () => {
         tg.close()
     }
+    const cloudStorage = () => {
+        tg.CloudStorage
+    }
 
     const onToggleButton = () => {
         if(tg.MainButton.isVisible) {
@@ -18,6 +21,7 @@ export function useTelegram() {
         onToggleButton,
         tg,
         user: tg.initDataUnsafe?.user,
+        cloudStorage
 
     }
 }

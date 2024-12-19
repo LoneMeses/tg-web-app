@@ -3,9 +3,11 @@ import './Main.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
 import {LoadingContext} from "../../context/LoadingContext";
+import {useTelegram} from "../../hooks/useTelegram";
 
 
 const Main = () => {
+    const {cloudStorage} = useTelegram()
 
     const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
@@ -31,7 +33,7 @@ const Main = () => {
                     return prevEnergy
                 }
             })
-            localStorage.setItem('energy', currentEnergy.toString())
+            cloudStorage.setItem('energy', currentEnergy.toString())
         }, 3000)
         return () => clearInterval(interval)
     }, [currentEnergy])
@@ -54,9 +56,9 @@ const Main = () => {
 
             setValue(value + 1)
             setCurrentEnergy(currentEnergy - 1)
-            localStorage.setItem('value', value.toString())
-            localStorage.setItem('energy', currentEnergy.toString())
-            localStorage.setItem('closeTime', Date.now().toString())
+            cloudStorage.setItem('value', value.toString())
+            cloudStorage.setItem('energy', currentEnergy.toString())
+            cloudStorage.setItem('closeTime', Date.now().toString())
 
             setTimeout(() => {
                 event.target.style.setProperty('--tiltX', `0deg`)

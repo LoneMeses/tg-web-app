@@ -7,28 +7,29 @@ import Footer from "./components/LexanKombat/Footer/Footer";
 
 
 function KombatApp() {
-    const {tg} = useTelegram()
+    const {tg, cloudStorage} = useTelegram()
     const [value, setValue] = useState(0)
     const [currentEnergy, setCurrentEnergy] = useState(2999)
 
 
     useEffect(() => {
         tg.ready()
-        const closeTime = parseInt(localStorage.getItem('closeTime')) || Date.now();
+        tg.expand()
+        const closeTime = parseInt(cloudStorage.getItem('closeTime')) || Date.now();
         const openTime = Date.now()
-        const lastCurrentEnergy = parseInt(localStorage.getItem('energy'))
+        const lastCurrentEnergy = parseInt(cloudStorage.getItem('energy'))
         const energyForAdd = ((openTime - closeTime) / 3000)
         console.log(closeTime)
         console.log(openTime)
         console.log(energyForAdd)
         if (energyForAdd + lastCurrentEnergy >= 3000) {
-            localStorage.setItem('energy', '3000')
+            cloudStorage.setItem('energy', '3000')
         } else {
-            localStorage.setItem('energy', (energyForAdd + lastCurrentEnergy).toString())
+            cloudStorage.setItem('energy', (energyForAdd + lastCurrentEnergy).toString())
         }
 
-        setValue(parseInt(localStorage.getItem('value')) || 0)
-        setCurrentEnergy(parseInt(localStorage.getItem('energy')) || currentEnergy)
+        setValue(parseInt(cloudStorage.getItem('value')) || 0)
+        setCurrentEnergy(parseInt(cloudStorage.getItem('energy')) || currentEnergy)
     }, [])
 
 
