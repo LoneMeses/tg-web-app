@@ -7,7 +7,7 @@ const FormKombat = () => {
     const navigate = useNavigate()
     useEffect(() => {
         tg.BackButton.show()
-        tg.BackButton.onClick(() => navigate(""))
+        tg.BackButton.onClick(navigate(''))
         return () => {
             tg.BackButton.hide()
         }
