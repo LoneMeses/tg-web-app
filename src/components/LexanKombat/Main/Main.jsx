@@ -35,7 +35,7 @@ const Main = () => {
             localStorage.setItem('closeTime', Date.now().toString())
         }, 3000)
         return () => clearInterval(interval)
-    }, [])
+    }, [currentEnergy])
 
     const onClickHandler = (event) => {
         if (currentEnergy <= totalEnergy) {
