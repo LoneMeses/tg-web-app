@@ -1,5 +1,34 @@
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    height: 60px;
+    position: sticky;
+    background: #181a1c;
+    border: 1px solid grey;
+    border-bottom: none;
+}
+.footer .home-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .home-div .home-btn {
+    color: grey;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+.footer hr {
+    height: 40px;
+    border-color: grey;
+}
+.footer .loss-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .loss-div .loss-btn {
+    color: grey;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
 }
