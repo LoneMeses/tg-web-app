@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import './Game.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
@@ -63,7 +63,6 @@ const Game = () => {
                 event.target.style.setProperty('--tiltX', `0deg`)
                 event.target.style.setProperty('--tiltX', `0deg`)
             }, 300)
-            console.log('Отрабатывает клик')
 
         }
     }
