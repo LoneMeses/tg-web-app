@@ -9,7 +9,7 @@ import Footer from "./components/LexanKombat/Footer/Footer";
 function KombatApp() {
     const {tg} = useTelegram()
     const [value, setValue] = useState(0)
-    const [currentEnergy, setCurrentEnergy] = useState(3000)
+    const [currentEnergy, setCurrentEnergy] = useState(2999)
 
 
     useEffect(() => {
