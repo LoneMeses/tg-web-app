@@ -1,9 +1,11 @@
 import {useTelegram} from "./components/hooks/useTelegram";
 import {useEffect, useState} from "react";
 import HeaderKombat from "./components/LexanKombat/Header/HeaderKombat";
-import Main from "./components/LexanKombat/Main/Main";
+import Game from "./components/LexanKombat/Game/Game";
 import {LoadingContext} from "./components/context/LoadingContext";
 import Footer from "./components/LexanKombat/Footer/Footer";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import FormKombat from "./components/LexanKombat/Form/FormKombat";
 
 
 function KombatApp() {
@@ -42,7 +44,12 @@ function KombatApp() {
         }}>
             <div className="App">
                 <HeaderKombat/>
-                <Main/>
+                <BrowserRouter>
+                    <Routes>
+                        <Route index element={<Game/>}/>
+                        <Route path={'form'} element={<FormKombat/>}/>
+                    </Routes>
+                </BrowserRouter>
                 <Footer/>
             </div>
         </LoadingContext.Provider>

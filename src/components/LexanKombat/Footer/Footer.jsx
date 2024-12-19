@@ -1,30 +1,31 @@
 import React from 'react';
 import {AiOutlineHome, AiOutlineDollar} from "react-icons/ai";
 import './Footer.css'
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
         <div className={'footer'}>
             <div className="home-div">
-                <a href="#" className={'home-btn'}>
+                <Link to={''} className={'home-btn'}>
                     <div>
                         <AiOutlineHome className={'home-icon'}/>
                     </div>
                     <div>
                         Главная
                     </div>
-                </a>
+                </Link>
             </div>
             <hr/>
             <div className="loss-div">
-                <a href="#" className={'loss-btn'}>
+                <Link to={'form'} className={'loss-btn'}>
                     <div>
                         <AiOutlineDollar className={'loss-icon'}/>
                     </div>
                     <div>
                         Вывод
                     </div>
-                </a>
+                </Link>
             </div>
         </div>
     );

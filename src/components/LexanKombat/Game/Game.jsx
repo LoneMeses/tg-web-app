@@ -1,12 +1,12 @@
 import React, {useContext, useEffect, useState} from 'react';
-import './Main.css'
+import './Game.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
 import {LoadingContext} from "../../context/LoadingContext";
-import {useTelegram} from "../../hooks/useTelegram";
 
 
-const Main = () => {
+
+const Game = () => {
 
     const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
@@ -70,7 +70,7 @@ const Main = () => {
 
 
     return (
-        <div className={'main'}>
+        <div className={'game'}>
             <div className={'counter'}>
                 <img src={Coin} alt="l-coin"/>
                 <span>{value}</span>
@@ -85,4 +85,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Game;
