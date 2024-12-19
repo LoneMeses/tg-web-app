@@ -4,8 +4,8 @@
     background: #181a1c;
     border-radius: 20px 20px 0 0;
     align-items: center;
-    flex-wrap: wrap;
-    height: calc(var(--tg-viewport-stable-height) - 70px);
+    flex-wrap: nowrap;
+    height: calc(var(--tg-viewport-stable-height) - 70px - 54px);
     flex-direction: column;
     box-shadow: 0 -5px 50px #af94c7;
     border-top: 2px solid #af94c7;
