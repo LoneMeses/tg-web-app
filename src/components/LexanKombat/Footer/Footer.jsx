@@ -4,9 +4,9 @@ import { AiOutlineHome, AiOutlineDollar } from "react-icons/ai";
 const Footer = () => {
     return (
         <div className={'footer'}>
-            <Link to={'/'}><AiOutlineHome/>Главная</Link>
+            <a href="#"><AiOutlineHome/>Главная</a>
             <hr/>
-            <Link to={'/form'}><AiOutlineDollar/>Вывод</Link>
+            <a href="#"><AiOutlineDollar/></a>
         </div>
     );
 };
