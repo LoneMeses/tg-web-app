@@ -32,6 +32,7 @@ const Main = () => {
                 }
             })
             localStorage.setItem('energy', currentEnergy.toString())
+            localStorage.setItem('closeTime', Date.now().toString())
         }, 3000)
         return () => clearInterval(interval)
     }, [])

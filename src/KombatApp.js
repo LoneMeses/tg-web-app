@@ -14,7 +14,7 @@ function KombatApp() {
 
     useEffect(() => {
         tg.ready()
-        const closeTime = parseInt(localStorage.getItem('closeTime')) || 0;
+        const closeTime = parseInt(localStorage.getItem('closeTime')) || Date.now();
         const openTime = Date.now()
         const energyForAdd = ((openTime - closeTime) / 3000)
         console.log(closeTime)
@@ -27,9 +27,6 @@ function KombatApp() {
 
         setValue(parseInt(localStorage.getItem('value')) || 0)
         setCurrentEnergy(parseInt(localStorage.getItem('energy')) || currentEnergy)
-        tg.onEvent('deactivated', () => {
-            localStorage.setItem('closeTime', Date.now().toString())
-        })
     }, [])
 
 
