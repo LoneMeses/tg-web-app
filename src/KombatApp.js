@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import HeaderKombat from "./components/LexanKombat/Header/HeaderKombat";
 import Main from "./components/LexanKombat/Main/Main";
 import {LoadingContext} from "./components/context/LoadingContext";
+import Footer from "./components/LexanKombat/Footer/Footer";
 
 
 function KombatApp() {
@@ -42,6 +43,7 @@ function KombatApp() {
             <div className="App">
                 <HeaderKombat/>
                 <Main/>
+                <Footer/>
             </div>
         </LoadingContext.Provider>
 

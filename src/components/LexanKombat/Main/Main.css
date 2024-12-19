@@ -7,13 +7,12 @@
     flex-wrap: wrap;
     flex-direction: column;
     box-shadow: 0 -5px 50px #af94c7;
-    height: 100vh;
     border-top: 2px solid #af94c7;
 }
 
 .counter {
-    margin-bottom: 50px;
-    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
 }
@@ -33,10 +32,9 @@ span {
     position: relative;
 }
 .circle img{
-    width: 250px;
+    width: 370px;
     height: 300px;
     border-radius: 50%;
-    box-shadow: 0 0 16px 0 rgba(138, 143, 254, 0.05);
     transition: transform 0.2s ease;
     --tiltX: 0deg;
     --tiltY: 0deg;
