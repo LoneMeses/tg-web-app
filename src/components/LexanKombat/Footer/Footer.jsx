@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="home-div">
                 <a href="#" className={'home-btn'}>
                     <div>
-                        <AiOutlineHome/>
+                        <AiOutlineHome className={'home-icon'}/>
                     </div>
                     <div>
                         Главная
@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="loss-div">
                 <a href="#" className={'loss-btn'}>
                     <div>
-                        <AiOutlineDollar/>
+                        <AiOutlineDollar className={'loss-icon'}/>
                     </div>
                     <div>
                         Вывод
