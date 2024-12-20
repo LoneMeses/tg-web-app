@@ -86,7 +86,7 @@ const Game = () => {
                 <img src={Lexan} alt="lexan" onClick={event => onClickHandler(event)}/>
             </div>
             <div className={'energy-bar'}>
-                <ProgressBar value={currentEnergy} displayValueTemplate={displayValueTemplate} color={'yellow'} pt={{label: <label>Энергия:</label>}}/>
+                <ProgressBar value={currentEnergy} color={'yellow'}/>
             </div>
         </div>
     );
