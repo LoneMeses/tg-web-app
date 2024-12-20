@@ -3,12 +3,13 @@ import './Game.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
 import {LoadingContext} from "../../context/LoadingContext";
+import {ProgressBar} from "primereact/progressbar";
 
 
 
 const Game = () => {
 
-    const {value, setValue, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
+    const {score, setScore, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
     const createFloatingScore = (x, y) => {
         const floatingScore = document.createElement('div');
@@ -53,9 +54,9 @@ const Game = () => {
             event.target.style.setProperty('--tiltY', `${tiltY}deg`)
             createFloatingScore(event.clientX, event.clientY)
 
-            setValue(value + 1)
+            setScore(score + 1)
             setCurrentEnergy(currentEnergy - 1)
-            localStorage.setItem('value', value.toString())
+            localStorage.setItem('value', score.toString())
             localStorage.setItem('energy', currentEnergy.toString())
             localStorage.setItem('closeTime', Date.now().toString())
 
@@ -66,19 +67,26 @@ const Game = () => {
 
         }
     }
+    const displayValueTemplate = (value) => {
+        return (
+            <React.Fragment>
+                {value}/<b>{totalEnergy}</b>
+            </React.Fragment>
+        );
+    }
 
 
     return (
         <div className={'game'}>
             <div className={'counter'}>
                 <img src={Coin} alt="l-coin"/>
-                <span>{value}</span>
+                <span>{score}</span>
             </div>
             <div className="circle">
                 <img src={Lexan} alt="lexan" onClick={event => onClickHandler(event)}/>
             </div>
             <div className={'energy-bar'}>
-                Энергия: {currentEnergy} / {totalEnergy}
+                <ProgressBar value={currentEnergy} displayValueTemplate={displayValueTemplate} color={'yellow'} pt={{label: <label>Энергия:</label>}}/>
             </div>
         </div>
     );

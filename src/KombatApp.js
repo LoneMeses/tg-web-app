@@ -10,7 +10,7 @@ import FormKombat from "./components/LexanKombat/Form/FormKombat";
 
 function KombatApp() {
     const {tg} = useTelegram()
-    const [value, setValue] = useState(0)
+    const [score, setScore] = useState(0)
     const [currentEnergy, setCurrentEnergy] = useState(2999)
 
 
@@ -27,15 +27,15 @@ function KombatApp() {
             localStorage.setItem('energy', (energyForAdd + lastCurrentEnergy).toString())
         }
 
-        setValue(parseInt(localStorage.getItem('value')) || 0)
+        setScore(parseInt(localStorage.getItem('value')) || 0)
         setCurrentEnergy(parseInt(localStorage.getItem('energy')) || currentEnergy)
     }, [])
 
 
     return (
         <LoadingContext.Provider value={{
-            value,
-            setValue,
+            score,
+            setScore,
             currentEnergy,
             setCurrentEnergy
         }}>
