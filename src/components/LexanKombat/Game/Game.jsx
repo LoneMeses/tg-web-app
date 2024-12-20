@@ -69,6 +69,7 @@ const Game = () => {
     }
 
 
+
     return (
         <div className={'game'}>
             <div className={'counter'}>
@@ -79,7 +80,7 @@ const Game = () => {
                 <img src={Lexan} alt="lexan" onClick={event => onClickHandler(event)}/>
             </div>
             <div className={'energy-bar'}>
-                <ProgressBar value={currentEnergy}/>
+                Энергия: {currentEnergy} / {totalEnergy}
             </div>
         </div>
     );
