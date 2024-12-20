@@ -67,13 +67,6 @@ const Game = () => {
 
         }
     }
-    const displayValueTemplate = (value) => {
-        return (
-            <React.Fragment>
-                {value}/<b>{totalEnergy}</b>
-            </React.Fragment>
-        );
-    }
 
 
     return (
