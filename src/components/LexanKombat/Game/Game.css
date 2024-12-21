@@ -61,21 +61,25 @@ span {
         transform: translateY(-50px);
     }
 }
-.energy-div {
+.energy-wrapper {
+    width: 100%;
+    border: 1px solid #ce991d;
+    background-color: #181a1c;
     font-family: "Montserrat", sans-serif;
+    text-align: center;
+    border-radius: 10px;
     margin-top: 20px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
     position: relative;
-    height: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 5px #ce991d inset;
+    margin-bottom: 20px;
 }
-.energy-div .energy-value {
+.energy-wrapper .energy-bar {
+    height: 30px;
+    background-color: #ce991d;
+    transition: width 500ms ease-in-out;
+}
+.energy-value {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.energy-div .energy-bar {
-    height: 10px;
-    width: 100%;
+    color: whitesmoke;
 }
