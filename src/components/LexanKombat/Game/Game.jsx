@@ -13,6 +13,7 @@ const Game = () => {
 
     const {score, setScore, currentEnergy, setCurrentEnergy} = useContext(LoadingContext)
     const totalEnergy = 3000
+    const widthForBar = currentEnergy * 100 / totalEnergy
     const createFloatingScore = (x, y) => {
         const floatingScore = document.createElement('div');
         floatingScore.id = 'floating-score';
