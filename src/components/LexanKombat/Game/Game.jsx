@@ -83,7 +83,7 @@ const Game = () => {
                 <img src={Lexan} alt="lexan" onClick={event => onClickHandler(event)}/>
             </div>
             <div className='energy-wrapper'>
-                Энергия: {currentEnergy} / {totalEnergy}
+                <p>Энергия: {currentEnergy} / {totalEnergy}</p>
                 <div className='energy-bar' style={{width: `${widthForBar}%`}}>
                 </div>
             </div>
