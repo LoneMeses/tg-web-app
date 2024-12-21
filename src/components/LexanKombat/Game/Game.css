@@ -62,7 +62,7 @@ span {
     }
 }
 .energy-wrapper {
-    width: 100%;
+    width: 90%;
     border: 1px solid #ce991d;
     background-color: #181a1c;
     font-family: "Montserrat", sans-serif;
@@ -76,10 +76,12 @@ span {
 .energy-wrapper .energy-bar {
     height: 30px;
     background-color: #ce991d;
+    border-radius: 10px;
     transition: width 500ms ease-in-out;
 }
 .energy-value {
     position: absolute;
     color: whitesmoke;
-    font-size: 12px;
+    font-size: 16px;
+    width: 100%;
 }
