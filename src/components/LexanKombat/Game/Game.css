@@ -67,7 +67,7 @@ span {
     padding: 10px 20px;
     margin-bottom: 20px;
     position: relative;
-    height: 30px;
+    height: 10px;
 }
 .energy-div .energy-value {
     position: absolute;
@@ -76,6 +76,6 @@ span {
     width: 100%;
 }
 .energy-div .energy-bar {
-    height: 30px;
+    height: 10px;
     width: 100%;
 }
