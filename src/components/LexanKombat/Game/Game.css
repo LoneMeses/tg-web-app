@@ -61,14 +61,20 @@ span {
         transform: translateY(-50px);
     }
 }
-.energy-bar {
-    width: 100%;
-    border: 1px solid #ce991d;
+.energy-div {
     font-family: "Montserrat", sans-serif;
-    text-align: center;
-    border-radius: 10px;
     margin-top: 20px;
     padding: 10px 20px;
-    box-shadow: 0 0 5px #ce991d inset;
     margin-bottom: 20px;
+    position: relative;
+    height: 30px;
+}
+.energy-div .energy-value {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.energy-div .energy-bar {
+    height: 30px;
 }

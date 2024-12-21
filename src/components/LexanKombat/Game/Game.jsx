@@ -3,7 +3,9 @@ import './Game.css'
 import Coin from '../assets/lCoin.png'
 import Lexan from '../assets/LexanButton.png'
 import {LoadingContext} from "../../context/LoadingContext";
-import {ProgressBar} from "primereact/progressbar";
+import {ProgressBar} from "react-bootstrap";
+
+
 
 
 
@@ -39,7 +41,7 @@ const Game = () => {
     }, [currentEnergy])
 
     const onClickHandler = (event) => {
-        if (currentEnergy <= totalEnergy) {
+        if (currentEnergy <= totalEnergy && currentEnergy > 0) {
             const rect = event.target.getBoundingClientRect()
 
             const offsetX = event.clientX - rect.left - rect.width / 2;
@@ -79,8 +81,9 @@ const Game = () => {
             <div className="circle">
                 <img src={Lexan} alt="lexan" onClick={event => onClickHandler(event)}/>
             </div>
-            <div className={'energy-bar'}>
-                Энергия: {currentEnergy} / {totalEnergy}
+            <div className='energy-div'>
+                <span className='energy-value'>Энергия: {currentEnergy} / {totalEnergy}</span>
+                <ProgressBar now={currentEnergy} max={totalEnergy} className='energy-bar' variant={'warning'}/>
             </div>
         </div>
     );
