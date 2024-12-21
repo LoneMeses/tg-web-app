@@ -81,8 +81,9 @@ const Game = () => {
             <div className="circle">
                 <img src={Lexan} alt="lexan" onClick={event => onClickHandler(event)}/>
             </div>
-            <div className='energy-div'>
-                <ProgressBar now={currentEnergy} max={totalEnergy} variant={'warning'}/>
+            <div className='position-relative h-30'>
+                <span className='position-absolute d-flex justify-content-center w-100'>Счёт: {energy} / {totalEnergy}</span>
+                <ProgressBar variant={"warning"} now={energy} max={totalEnergy} style={{height: 30}}/>
             </div>
         </div>
     );
