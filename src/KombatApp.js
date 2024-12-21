@@ -6,8 +6,7 @@ import {LoadingContext} from "./components/context/LoadingContext";
 import Footer from "./components/LexanKombat/Footer/Footer";
 import {Route, Routes} from "react-router-dom";
 import FormKombat from "./components/LexanKombat/Form/FormKombat";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.css'
 function KombatApp() {
     const {tg} = useTelegram()
     const [score, setScore] = useState(0)

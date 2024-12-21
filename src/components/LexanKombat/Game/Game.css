@@ -62,7 +62,7 @@ span {
     }
 }
 .energy-wrapper {
-    width: 100%;
+    width: var(--tg-viewport-width);
     border: 1px solid #ce991d;
     background-color: #181a1c;
     font-family: "Montserrat", sans-serif;
@@ -70,7 +70,6 @@ span {
     border-radius: 10px;
     margin-top: 20px;
     position: relative;
-    padding: 10px 20px;
     box-shadow: 0 0 5px #ce991d inset;
     margin-bottom: 20px;
 }
