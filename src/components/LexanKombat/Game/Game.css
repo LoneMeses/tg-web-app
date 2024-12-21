@@ -62,7 +62,7 @@ span {
     }
 }
 .energy-wrapper {
-    width: var(--tg-viewport-width);
+    width: 100%;
     border: 1px solid #ce991d;
     background-color: #181a1c;
     font-family: "Montserrat", sans-serif;
@@ -81,4 +81,5 @@ span {
 .energy-value {
     position: absolute;
     color: whitesmoke;
+    font-size: 14px;
 }
